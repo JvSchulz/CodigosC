@@ -1,0 +1,91 @@
+index(-)
+fruta(banana).
+fruta(pera).
+fruta(laranja).
+fruta(abacate).
+
+index(-)
+carnes(picanha).
+carnes(maminha).
+carnes(alcatra).
+carnes(frango).
+
+index(-)
+bebidas(vodka).
+bebidas(agua_de_coco).
+bebidas(agua).
+bebidas(leite).
+
+index(-)
+verduras(alface).
+verduras(brocolis).
+verduras(couve_flor).
+verduras(cebola).
+
+index(-)
+condimentos(requeijao).
+condimentos(maionese).
+condimentos(ketchup).
+condimentos(mostarda).
+
+index(-)
+legumes(batata).
+legumes(mandioca).
+legumes(inhame).
+legumes(arroz).
+
+test_different(N,[]) => true.
+
+test_different(N, [H|T]) => N != H,
+							test_different(N,T),
+							test_different(H,T).
+
+different([H|T]) => test_different(H,T).
+
+
+print_local(V1,V2,V3,V4) => printf("Valor1: %w, ",V1),
+					  printf("Valor2: %w, ",V2),
+					  printf("Valor3: %w, ", V3),
+					  printf("Valor4: %w\n", V4).
+					  
+					  
+					  
+main => amigas_na_piscina(Menina1,Menina2,Menina3,Menina4),
+		printf("Menina 1: %w\n",Menina1),
+		printf("Menina 2: %w\n",Menina2),
+		printf("Menina 3: %w\n",Menina3),
+		printf("Menina 4: %w",Menina4),
+	    true.
+
+amigas_na_piscina(Menina1,Menina2,Menina3,Menina4) ?=> (maio(M1), maio(M2), maio(M3), M4 = verde),
+													   different([M1,M2,M3,M4]),
+													   print_local(M1,M2,M3,M4),
+													   (N1 = raquel, N2 = vivian, nome(N3), nome(N4)),
+													   different([N1,N2,N3,N4]),
+													   print_local(N1,N2,N3,N4),
+													   (I1 = 11, idade(I2), idade(I3), I4 = 8),
+													   different([I1,I2,I3,I4]),'
+													   print_local(I1,I2,I3,I4),
+													   (S1 = laranja, suco(S2), suco(S3), S4 = morango),
+													   different([S1,S2,S3,S4]),
+													   print_local(S1,S2,S3,S4),
+													   (protetor(P1),P2 = fps55, protetor(P3), protetor(P4)),
+													   different([P1,P2,P3,P4]),
+													   print_local(P1,P2,P3,P4),
+													   (A1= gatos, animal(A2), A3 = cachorros, A4 = peixes),
+													   different([A1,A2,A3,A4]),
+													   print_local(A1,A2,A3,A4),
+													   ((N3 == ana, P3 == fps50);
+														(N4 == ana, P4 == fps50)),
+													   (I4 == 8, P3 == fps40),
+													   (A2 == passaros, (S1 == maracuja; S3 == maracuja)),
+													   ((S1 == maracuja, S2 == limao);
+														(S3 == maracuja, (S2 == limao; S4 == limao))),
+													   ((I2 == 9, M1 == azul);
+														(I3 == 9, (M1 == azul; M2 == azul));
+														(I4 == 9, (M1 == azul; M2 == azul; M3 == azul))),
+														M1 == branco,
+														Menina1 = [{"maio", M1}, {"nome", N1}, {"idade",I1}, {"suco",S1}, {"protetor", P1}, {"animal", A1}],
+														Menina2 = [{"maio", M2}, {"nome", N2}, {"idade",I2}, {"suco",S2}, {"protetor", P2}, {"animal", A2}],
+														Menina3 = [{"maio", M3}, {"nome", N3}, {"idade",I3}, {"suco",S3}, {"protetor", P3}, {"animal", A3}],
+														Menina4 = [{"maio", M4}, {"nome", N4}, {"idade",I4}, {"suco",S4}, {"protetor", P4}, {"animal", A4}].

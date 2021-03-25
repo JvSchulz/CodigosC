@@ -20,7 +20,7 @@ struct aluno {
 int main()
 {
 
-    //Exemplo 6
+    //Exemplo 5
     /*
  struct aluno a[3];
  int i;
